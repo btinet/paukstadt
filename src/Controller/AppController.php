@@ -23,11 +23,12 @@ class AppController extends AbstractController
             $lastname = $request->request->get('lastname');
             $email = $request->request->get('email');
             $phone = $request->request->get('phone');
-            $message = utf8_encode($request->request->get('message'));
+            $message = $request->request->get('message');
             $result = $request->request->get('result');
             if($result == 15) {
 
                 $mail = new PHPMailer(true);
+                $mail->Encoding = PHPMailer::ENCODING_BASE64;
 
                 $mailMessage = "Folgende Anfrage wurde gerade gemacht:\n\n";
                 $mailMessage .= "Firma: $company\n";
@@ -41,8 +42,8 @@ class AppController extends AbstractController
                 try {
                     $mail->setFrom('no-reply@bausanierung-paukstadt.de', 'Website-Formular');
                     $mail->addAddress('kv@treptow-kolleg.de', 'Bausanierung Paukstadt');     //Add a recipient
-                    $mail->Subject = utf8_encode('Anfrage über Website');
-                    $mail->Body    = utf8_encode($mailMessage);
+                    $mail->Subject = 'Anfrage über Website';
+                    $mail->Body    = $mailMessage;
                     $mail->send();
                 } catch (Exception $e) {
                     die($mail->ErrorInfo);
