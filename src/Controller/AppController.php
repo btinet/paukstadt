@@ -32,7 +32,7 @@ class AppController extends AbstractController
                 $mailMessage .= "Telefon: $phone\n\n";
                 $mailMessage .= "Nachricht:\n";
                 $mailMessage .= "$message";
-                mb_send_mail('kv@treptow-kolleg.de','Anfrage über Website',$mailMessage);
+                mail('kv@treptow-kolleg.de','Anfrage über Website',$mailMessage,"From: Website <no-reply@bausanierung-paukstadt.de>");
             }
         }
 
