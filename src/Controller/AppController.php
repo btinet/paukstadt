@@ -23,7 +23,7 @@ class AppController extends AbstractController
             $phone = $request->request->get('phone');
             $message = utf8_encode($request->request->get('message'));
             $result = $request->request->get('result');
-            if($result == (string)15) {
+            if($result == 15) {
                 $mailMessage = "Folgende Anfrage wurde gerade gemacht:\n\n";
                 $mailMessage .= "Firma: $company\n";
                 $mailMessage .= "Vorname: $firstname\n";
@@ -32,7 +32,7 @@ class AppController extends AbstractController
                 $mailMessage .= "Telefon: $phone\n\n";
                 $mailMessage .= "Nachricht:\n";
                 $mailMessage .= "$message";
-                mail('bwagner@vapita.de','Anfrage über Website',$mailMessage);
+                mb_send_mail('kv@treptow-kolleg.de','Anfrage über Website',$mailMessage);
             }
         }
 
