@@ -46,8 +46,8 @@ class AppController extends AbstractController
                     $mail->Subject = 'Anfrage vom Website-Formular';
                     $mail->isHTML(true);
                     $mail->Body    = $mailMessage;
-                    $mail->send();
                     $this->addFlash('success','E-Mail wurde erfolgreich versendet. Wir melden uns bald bei Ihnen.');
+                    $mail->send();
                 } catch (Exception $e) {
                     die($mail->ErrorInfo);
                 }

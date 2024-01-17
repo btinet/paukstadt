@@ -33,11 +33,6 @@
 
     <main>
         {% include 'components/navbar.html.twig' %}
-        {% for message in app.flashes('success') %}
-            <div class="alert alert-success rounded-0">
-                {{ message }}
-            </div>
-        {% endfor %}
         {% block body %}{% endblock %}
     </main>
     <footer class="footer mt-auto py-3 bg-body-tertiary">
