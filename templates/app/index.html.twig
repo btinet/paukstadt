@@ -5,7 +5,9 @@
 {% block body %}
     {% for message in app.flashes('success') %}
         <div class="alert alert-success rounded-0">
-            {{ message }}
+            <div class="container">
+                {{ message }}
+            </div>
         </div>
     {% endfor %}
     <img src="{{ asset('img/sanierung_001.jpg') }}" alt="Renovierte Küche" class="w-100">
