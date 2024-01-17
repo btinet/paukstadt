@@ -31,20 +31,20 @@ class AppController extends AbstractController
                 $mail->Encoding = PHPMailer::ENCODING_BASE64;
                 $mail->CharSet = PHPMailer::CHARSET_UTF8;
 
-                $mailMessage = "Folgende Anfrage wurde gerade gemacht:\n\n";
-                $mailMessage .= "Firma: $company\n";
-                $mailMessage .= "Vorname: $firstname\n";
-                $mailMessage .= "Nachname: $lastname\n";
-                $mailMessage .= "E-Mail-Adresse: $email\n";
-                $mailMessage .= "Telefon: $phone\n\n";
-                $mailMessage .= "Nachricht:\n";
-                $mailMessage .= "$message";
+                $mailMessage = $this->render('mail/mail.html.twig',[
+                    'company' => $company,
+                    'firstname' => $firstname,
+                    'lastname' => $lastname,
+                    'email' => $email,
+                    'phone' => $phone,
+                    'message' => $message,
+                ]);
 
                 try {
                     $mail->setFrom('no-reply@bausanierung-paukstadt.de', 'Website-Formular');
                     $mail->addAddress('kv@treptow-kolleg.de', 'Bausanierung Paukstadt');     //Add a recipient
-                    $mail->Subject = utf8_encode('Anfrage über Website');
-                    $mail->Body    = utf8_encode($mailMessage);
+                    $mail->Subject = 'Anfrage vom Website-Formular';
+                    $mail->Body    = $mailMessage;
                     $mail->send();
                 } catch (Exception $e) {
                     die($mail->ErrorInfo);
