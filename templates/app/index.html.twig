@@ -1,0 +1,155 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <img src="{{ asset('img/sanierung_001.jpg') }}" alt="Renovierte Küche" class="w-100">
+    <div class="container my-5">
+        <h1 class="display-4">Wir beraten Sie gern!</h1>
+        <p class="lead">
+            Wir sind ein branchenerfahrenes Familienunternehmen, das sich seit 1995 auf die Bausanierung spezialisiert hat. Unser Leistungsspektrum reicht von A wie Altbausanierung bis Z wie Ziegeldachdemontage. Wir gewährleisten Ihnen kompetente Beratung und kompromisslose Arbeitsqualität bei der Ausführung unserer Arbeiten.
+        </p>
+    </div>
+
+    {#
+    <section id="referenzen" class="bg-light">
+        <div class="container py-5">
+            <h2 class="text-center mb-3">Unsere Partner</h2>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3">
+                <div><div class="card card-body">A</div></div>
+                <div><div class="card card-body">A</div></div>
+                <div><div class="card card-body">A</div></div>
+                <div><div class="card card-body">A</div></div>
+                <div><div class="card card-body">A</div></div>
+                <div><div class="card card-body">A</div></div>
+                <div><div class="card card-body">A</div></div>
+                <div><div class="card card-body">A</div></div>
+            </div>
+        </div>
+    </section>
+    #}
+
+    <section id="services" class="bg-light">
+        <div class="container py-5">
+            <h2 class="mb-3 display-5">Das leisten wir für Sie</h2>
+
+
+
+            <div class="row row-cols-1 row-cols-md-2 align-items-md-center g-3 py-5">
+
+                <div class="col d-flex flex-column align-items-start gap-2">
+                    <a href="#contact" class="btn btn-dark btn-lg mb-3">Kontakt aufnehmen</a>
+                    <h2 class="fw-bold text-body-emphasis">Wir bieten Ihnen sämtliche Sanierungsarbeiten aus einer Hand</h2>
+                    <p class="text-body-secondary">Unsere umfassende Servicephilosophie erstreckt sich von der Analyse bis zur handwerklichen Umsetzung sämtlicher Sanierungsarbeiten aus einer Hand. In enger Zusammenarbeit mit anderen Gewerken, darunter Sanitär- und Heizungstechnik, Elektriker und Bodenleger, garantieren wir eine ganzheitliche Lösung. Unsere koordinierte Vorgehensweise sichert nicht nur Effizienz und Qualität, sondern auch eine reibungslose Umsetzung Ihres Projekts.</p>
+                </div>
+
+                <div class="col">
+                    <div class="row row-cols-1 row-cols-sm-2 g-3">
+                        <div class="col d-flex flex-column gap-2">
+
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Komplettsanierung</h4>
+                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-secondary fs-4">
+                                <svg class="bi" width="1em" height=".125em"></svg>
+                            </div>
+                            <p class="text-body-secondary">Unsere Komplettsanierungen bieten höchste handwerkliche Qualität, präzise Umsetzung und effiziente Koordination aller Gewerke für termingerechte Fertigstellung.</p>
+                        </div>
+
+                        <div class="col d-flex flex-column gap-2">
+
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Wohnungsumbauten</h4>
+                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-secondary fs-4">
+                                <svg class="bi" width="1em" height=".125em"></svg>
+                            </div>
+                            <p class="text-body-secondary">Mit unserer Expertise gestalten wir Ihre Wohnung nach Ihren Wünschen: kreative Lösungen, hochwertige Materialien und präzise Ausführung für ein funktionales und ästhetisch überzeugendes Zuhause.</p>
+                        </div>
+
+                        <div class="col d-flex flex-column gap-2">
+
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Aus- und Neubau</h4>
+                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-secondary fs-4">
+                                <svg class="bi" width="1em" height=".125em"></svg>
+                            </div>
+                            <p class="text-body-secondary">Von der Planung bis zur schlüsselfertigen Übergabe schaffen wir Ihren Traumraum mit innovativen Konzepten und erstklassiger Handwerksarbeit.</p>
+                        </div>
+
+                        <div class="col d-flex flex-column gap-2">
+
+                            <h4 class="fw-semibold mb-0 text-body-emphasis">Sanieren und Renovieren</h4>
+                            <div class="feature-icon-small d-inline-flex align-items-center justify-content-center text-bg-secondary fs-4">
+                                <svg class="bi" width="1em" height=".125em"></svg>
+                            </div>
+                            <p class="text-body-secondary">Wir lassen Ihre Räumlichkeiten mit Fachwissen, hochwertigen Materialien und einem erfahrenen Team in neuem Glanz erstrahlen – professionell, wertsteigernd und individuell.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container my-5">
+            <h2 class="display-5">Kontakt aufnehmen</h2>
+            <p class="lead">
+                Bereit für frischen Wind in Ihren Räumlichkeiten? Kontaktieren Sie uns jetzt für eine individuelle Beratung und gemeinsam gestalten wir Ihr Projekt. Wir freuen uns darauf, von Ihnen zu hören!
+            </p>
+            <form class="row g-3 needs-validation" method="post" action="{{ url('app_index') }}" novalidate>
+                <div class="col-md-12">
+                    <label for="company" class="form-label">Firma</label>
+                    <input type="text" class="form-control" name="company" id="company">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="firstname" class="form-label">Vorname</label>
+                    <input type="text" class="form-control" name="firstname" id="firstname">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="lastname" class="form-label">Nachname</label>
+                    <input type="text" class="form-control" name="lastname" id="lastname" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label">E-Mail-Adresse</label>
+                    <input type="email" class="form-control" name="email" id="email" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="phone" class="form-label">Telefon</label>
+                    <input type="text" class="form-control" name="phone" id="phone">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="message" class="form-label">Ihre Nachricht</label>
+                    <textarea class="form-control" id="message" name="message" rows="6" required></textarea>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="result" class="form-label">Zum Schutz vor Spam bitte folgende Aufgabe lösen: <b>7 + 8</b></label>
+                    <input type="text" class="form-control" name="result" required id="result">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-lg mt-3 btn-dark" type="submit">Nachricht absenden</button>
+                </div>
+            </form>
+        </div>
+        <img src="{{ asset('img/map.png') }}" alt="Karte" class="w-100">
+
+    </section>
+
+{% endblock %}

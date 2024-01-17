@@ -1,17 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="{{ url('app_index') }}">
+        <meta name="description" content="Ihr Experte für umfassende Bauprojekte! Wir bieten Komplettsanierungen, kreative Wohnungsumbauten und visionäre Aus- und Neubauprojekte. Verleihen Sie Ihren Räumlichkeiten neuen Glanz mit unseren Sanierungs- und Renovierungsexperten. Handwerkliche Qualität, innovative Konzepte und hochwertige Materialien stehen im Fokus unserer Arbeit. Kontaktieren Sie uns für individuelle Beratung und lassen Sie Ihre Wohnträume wahr werden.">
+        <meta name="keywords" content="Komplettsanierung, Wohnungsumbau, Aus- und Neubau, Sanierung, Renovierung, handwerkliche Qualität, innovative Konzepte, hochwertige Materialien, individuelle Raumgestaltung">
+        <meta property="og:title" content="Bausanierung Paukstadt">
+        <meta property="og:description" content="Ihr Experte für umfassende Bauprojekte! Wir bieten Komplettsanierungen, kreative Wohnungsumbauten und visionäre Aus- und Neubauprojekte. Kontaktieren Sie uns für individuelle Beratung und lassen Sie Ihre Wohnträume wahr werden.">
+        <meta name="twitter:title" content="Bausanierung Paukstadt">
+        <meta name="twitter:description" content="Ihr Experte für umfassende Bauprojekte! Wir bieten Komplettsanierungen, kreative Wohnungsumbauten und visionäre Aus- und Neubauprojekte. Kontaktieren Sie uns für individuelle Beratung und lassen Sie Ihre Wohnträume wahr werden.">
+
+        <title>Bausanierung Paukstadt{% block title %}{% endblock %}</title>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
         {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
         {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
 {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
     <body>
+
+    <main>
+        {% include 'components/navbar.html.twig' %}
         {% block body %}{% endblock %}
+    </main>
+    <footer class="footer mt-auto py-3 bg-body-tertiary">
+        <div class="container">
+            <div class="d-flex flex-column flex-lg-row justify-content-lg-between align-items-center">
+                <span class="text-body-secondary">&copy;1995-{{ date()|date('Y') }} Bausanierung Paukstadt</span>
+                <div>
+                    <span class="me-3"><i class="fa-solid fa-truck text-muted me-1"></i><a class="text-muted" href="{{ url('app_imprint') }}">Impressum</a></span>
+                    <span class="me-3"><i class="fa-solid fa-file  text-muted me-2"></i><a class="text-muted" href="{{ url('app_privacy') }}">Datenschutz</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
     </body>
 </html>
