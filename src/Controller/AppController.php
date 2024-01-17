@@ -28,7 +28,8 @@ class AppController extends AbstractController
             if($result == 15) {
 
                 $mail = new PHPMailer(true);
-                $mail->Encoding = PHPMailer::ENCODING_BASE64;
+                $mail->Encoding = PHPMailer::CHARSET_UTF8;
+                $mail->CharSet = PHPMailer::CHARSET_ISO88591;
 
                 $mailMessage = "Folgende Anfrage wurde gerade gemacht:\n\n";
                 $mailMessage .= "Firma: $company\n";
