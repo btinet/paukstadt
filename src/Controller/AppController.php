@@ -41,8 +41,8 @@ class AppController extends AbstractController
                 try {
                     $mail->setFrom('no-reply@bausanierung-paukstadt.de', 'Website-Formular');
                     $mail->addAddress('kv@treptow-kolleg.de', 'Bausanierung Paukstadt');     //Add a recipient
-                    $mail->Subject = 'Anfrage über Website';
-                    $mail->Body    = $mailMessage;
+                    $mail->Subject = utf8_encode('Anfrage über Website');
+                    $mail->Body    = utf8_encode($mailMessage);
                     $mail->send();
                 } catch (Exception $e) {
                     die($mail->ErrorInfo);
