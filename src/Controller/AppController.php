@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Error;
 use ErrorException;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,6 +26,9 @@ class AppController extends AbstractController
             $message = utf8_encode($request->request->get('message'));
             $result = $request->request->get('result');
             if($result == 15) {
+
+                $mail = new PHPMailer(true);
+
                 $mailMessage = "Folgende Anfrage wurde gerade gemacht:\n\n";
                 $mailMessage .= "Firma: $company\n";
                 $mailMessage .= "Vorname: $firstname\n";
@@ -32,10 +37,18 @@ class AppController extends AbstractController
                 $mailMessage .= "Telefon: $phone\n\n";
                 $mailMessage .= "Nachricht:\n";
                 $mailMessage .= "$message";
-                mail('kv@treptow-kolleg.de','Anfrage über Website',$mailMessage,"From: Website <no-reply@bausanierung-paukstadt.de>");
-            }
-        }
 
+                try {
+                    $mail->setFrom('no-reply@bausanierung-paukstadt.de', 'Website-Formular');
+                    $mail->addAddress('kv@treptow-kolleg.de', 'Bausanierung Paukstadt');     //Add a recipient
+                    $mail->Subject = 'Anfrage über Website';
+                    $mail->Body    = '$mailMessage';
+                    $mail->send();
+                } catch (Exception $e) {
+                    die($mail->ErrorInfo);
+                }
+             }
+        }
 
         return $this->render('app/index.html.twig', [
         ]);
