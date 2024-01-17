@@ -29,7 +29,7 @@ class AppController extends AbstractController
 
                 $mail = new PHPMailer(true);
                 $mail->Encoding = PHPMailer::ENCODING_BASE64;
-                $mail->CharSet = PHPMailer::CHARSET_ISO88591;
+                $mail->CharSet = PHPMailer::CHARSET_UTF8;
 
                 $mailMessage = "Folgende Anfrage wurde gerade gemacht:\n\n";
                 $mailMessage .= "Firma: $company\n";
