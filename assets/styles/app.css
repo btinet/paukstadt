@@ -16,3 +16,9 @@ a {
         text-align:center
     }
 }
+
+form label.required:after
+{
+    color: #B0413E;
+    content: " *";
+}
