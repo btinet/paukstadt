@@ -97,40 +97,46 @@
     <section id="details">
         <div class="container py-5">
             <h2 class="display-6 mb-4">Leistungen im Detail</h2>
-            <div class="row row-cols-md-2 g-3">
-                <div>
-                    <h3 class="h4">Fliesenarbeiten</h3>
-                    <div class="list-group list-group-flush">
-                        <div class="list-group-item">Beratung, Planung und Ausführung</div>
-                        <div class="list-group-item">Legen von Fliesen, Platten, Naturstein</div>
-                        <div class="list-group-item">Verkauf und Lieferung von Fliesen</div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="h4">Vorarbeiten</h3>
-                    <div class="list-group list-group-flush">
-                        <div class="list-group-item">Abbruch und Maurerarbeiten</div>
-                        <div class="list-group-item">Trockenbau, Kernbohrungen</div>
-                        <div class="list-group-item">Putzarbeiten</div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="h4">Einbau genormter Baufertigteile</h3>
-                    <div class="list-group list-group-flush">
-                        <div class="list-group-item">Zargen-, Stahlzargen-, Türzargeneinbau</div>
-                        <div class="list-group-item">Einbau vorgefertigter Fenster und Türen</div>
-                        <div class="list-group-item">Einbau von genormten Fensterelementen</div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="h4">Sanierung</h3>
-                    <div class="list-group list-group-flush">
-                        <div class="list-group-item">Vollwärmeschutz</div>
-                        <div class="list-group-item">Balkonsanierung</div>
-                        <div class="list-group-item">Schornsteinsanierung</div>
+            <div class="row g-3">
+
+                <div class="col-md-9">
+                    <div class="row row-cols-md-2 g-3">
+                        <div>
+                            <h3 class="h4">Fliesenarbeiten</h3>
+                            <div class="list-group list-group-flush">
+                                <div class="list-group-item">Beratung, Planung und Ausführung</div>
+                                <div class="list-group-item">Legen von Fliesen, Platten, Naturstein</div>
+                                <div class="list-group-item">Verkauf und Lieferung von Fliesen</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="h4">Vorarbeiten</h3>
+                            <div class="list-group list-group-flush">
+                                <div class="list-group-item">Abbruch und Maurerarbeiten</div>
+                                <div class="list-group-item">Trockenbau, Kernbohrungen</div>
+                                <div class="list-group-item">Putzarbeiten</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="h4">Einbau genormter Baufertigteile</h3>
+                            <div class="list-group list-group-flush">
+                                <div class="list-group-item">Zargen-, Stahlzargen-, Türzargeneinbau</div>
+                                <div class="list-group-item">Einbau vorgefertigter Fenster und Türen</div>
+                                <div class="list-group-item">Einbau von genormten Fensterelementen</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="h4">Sanierung</h3>
+                            <div class="list-group list-group-flush">
+                                <div class="list-group-item">Vollwärmeschutz</div>
+                                <div class="list-group-item">Balkonsanierung</div>
+                                <div class="list-group-item">Schornsteinsanierung</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -185,6 +191,15 @@
                     <button class="btn btn-lg mt-3 btn-dark" type="submit">Nachricht absenden</button>
                 </div>
             </form>
+        </div>
+        <div class="container py-5">
+            <h3 class="h5">Firmenanschrift</h3>
+            <p>
+                Udo Paukstadt<br>
+                Lehnitzstraße 87<br>
+                12623 Berlin
+            </p>
+            <a href="https://maps.app.goo.gl/ugQDzsqXJn2pMC9h9" class="btn btn-sm btn-dark" target="_blank">Route in Google Maps berechnen</a>
         </div>
         <img src="{{ asset('img/map.png') }}" alt="Karte" class="w-100">
 
