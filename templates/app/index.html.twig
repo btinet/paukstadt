@@ -193,13 +193,45 @@
             </form>
         </div>
         <div class="container py-5">
-            <h3 class="h5">Firmenanschrift</h3>
-            <p>
-                Udo Paukstadt<br>
-                Lehnitzstraße 87<br>
-                12623 Berlin
-            </p>
-            <a href="https://maps.app.goo.gl/ugQDzsqXJn2pMC9h9" class="btn btn-sm btn-dark" target="_blank">Route in Google Maps berechnen</a>
+            <div class="row row-cols-md-4 g-3">
+                <div>
+                    <h3 class="h5">Firmenanschrift<i class="ms-2 bi bi-pin-map"></i></h3>
+                    <p>
+                        Udo Paukstadt<br>
+                        Lehnitzstraße 87<br>
+                        12623 Berlin
+                    </p>
+                    <a href="https://maps.app.goo.gl/ugQDzsqXJn2pMC9h9" class="btn btn-sm btn-dark" target="_blank">Route in Google Maps berechnen<i class="ms-2 bi bi-box-arrow-up-right"></i></a>
+                </div>
+                <div>
+                    <h3 class="h5">Telefon<i class="ms-2 bi bi-telephone"></i></h3>
+                    <p>
+                        Festnetz: <a href="tel:+4903056702820" class="link-dark">030-5670 2820</a><br>
+                        Fax: <span class="link-dark">030-5670 2820</span><br>
+                        Mobil: <a href="tel:+4915124109385" class="link-dark">0151-2410 9385</a><br>
+                    </p>
+                </div>
+                <div class="">
+                    <h3 class="h5">Sie finden uns auch bei</h3>
+                    <a href="https://www.my-hammer.de/auftragnehmer/bausanierung-udo-paukstadt" target="_blank">
+                        <img src="{{ asset('img/MyHammer-Logo-2018.svg') }}" height="32" alt="My-Hammer-Logo">
+                    </a>
+
+                </div>
+                <div class="text-center text-md-end">
+                    <h3 class="h5">Rezensionen</h3>
+                    <p class="lead">Sie sind mit uns zufrieden?<br>Teilen Sie uns dies gern mit.</p>
+                    <a href="https://www.google.com/maps/place/Udo+Paukstadt/@52.4861093,13.6151287,17z/data=!4m18!1m9!3m8!1s0x47a849c57ff4d953:0xeb483b9d3975078!2sUdo+Paukstadt!8m2!3d52.4861061!4d13.6177036!9m1!1b1!16s%2Fg%2F1wyc3c11!3m7!1s0x47a849c57ff4d953:0xeb483b9d3975078!8m2!3d52.4861061!4d13.6177036!9m1!1b1!16s%2Fg%2F1wyc3c11?entry=ttu" target="_blank" class="btn btn-sm btn-dark">
+                        Bewerten Sie uns
+                        <i class="ms-2 bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
         <img src="{{ asset('img/map.png') }}" alt="Karte" class="w-100">
 
